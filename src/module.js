@@ -10,20 +10,19 @@ const Module = (p) => {
 
   const files = useRef(modules[p.voice][p.module]);
   const path = useRef(["modules", p.voice, p.module].join("/"));
-  const filesLength = useRef(files.current.length);
+  const filesLength = useRef(Object.keys(files.current).length);
 
   const maxRepeats = parseInt(p.repeat);
 
   const { load } = useAudioPlayer();
 
-  const file = files.current[fileIndex];
+  const file = `${String(fileIndex).padStart(3, "0")}.mp3`;
 
   const barPercentageDone = Math.ceil(
     ((fileIndex + 1) / filesLength.current) * 100,
   );
 
-  
-  const text = hex2a(decodeURIComponent(file).replace(".mp3", ""));
+  const text = files.current[file];
 
   const prev = useCallback(() => {
     setRepeatNr(0);
@@ -73,7 +72,7 @@ const Module = (p) => {
       setTimeout(
         () => {
           playOnce(() => {
-            const time = Math.ceil(file.length / 20) * 1000 + 800;
+            const time = Math.ceil(text.length / 20) * 1000 + 800;
 
             setTimeout(() => {
               setRepeatNr(repeatNr + 1);
@@ -83,7 +82,7 @@ const Module = (p) => {
         repeatNr === 0 ? 1000 : 0,
       );
     },
-    [repeatNr, isPlaying, file, playOnce],
+    [repeatNr, isPlaying, text, playOnce],
   );
 
   const start = useCallback(() => {
@@ -110,9 +109,11 @@ const Module = (p) => {
       } else if (repeatNr === maxRepeats) {
         setRepeatNr(0);
 
-        if (files.current[fileIndex + 1]) {
+        const checkFile = files.current[String(fileIndex + 1).padStart(3, "0")]
+
+        if (checkFile) {
           setFileIndex(fileIndex + 1);
-        } else if (!files.current[fileIndex + 1] && isPlaying) {
+        } else if (!checkFile && isPlaying) {
           setFileIndex(0);
           setIsPlaying(false);
         }
