@@ -39,6 +39,10 @@ const Modules = (p) => {
           <br />
           Simply listen and repeat out loud.
         </div>
+
+        <a className="abtn" style={styles.shop} href="https://shop.shadowenglish.com/" target="_blank">
+        🎁 Shop 
+        </a>
       </div>
 
       <div style={styles.preferences}>
@@ -55,10 +59,6 @@ const Modules = (p) => {
             ))}
           </select>
         </div>
-
-        <a className="abtn" style={styles.shop} href="https://shop.shadowenglish.com/" target="_blank">
-        🎁 Shop 
-        </a>
       </div>
 
       <div style={styles.modules}>
