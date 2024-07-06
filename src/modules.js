@@ -28,7 +28,7 @@ const Modules = (p) => {
             width={80}
             height={80}
             src="/logo.png"
-            alt="ShadowEnglish.com - Easy English"
+            alt="Shadow.EnglishFlow.AI - Easy English"
           />
         </div>
 
@@ -40,7 +40,7 @@ const Modules = (p) => {
           Simply listen and repeat out loud.
         </div>
 
-        <a className="abtn" style={styles.shop} href="https://shop.shadowenglish.com/" target="_blank">
+        <a className="abtn" style={styles.shop} href="https://englishflow.ai/" target="_blank">
         🎁 Shop 
         </a>
       </div>
@@ -74,7 +74,7 @@ const Modules = (p) => {
 
       <div style={styles.footer}>
         <p>
-          ShadowEnglish.com includes 59 modules of the most common phrases and expressions used in the English language that you can use for deep learning and accent training.
+          59 modules of the most common phrases and expressions used in the English language that you can use for deep learning and accent training.
         </p>
 
         <p>
