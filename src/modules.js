@@ -32,7 +32,7 @@ const Modules = (p) => {
           />
         </div>
 
-        <div style={styles.title}>ShadowEnglish.com</div>
+        <div style={styles.title}>Shadow.EnglishFlow.AI</div>
 
         <div style={styles.subtitle}>
           Start speaking English fluently & fast.
