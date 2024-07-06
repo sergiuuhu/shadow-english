@@ -39,7 +39,7 @@ const BrandedOverlay = () => {
         src="/logo.png"
         width={80}
         height={80}
-        alt="ShadowEnglish.com - Easy English"
+        alt="Shadow.EnglishFlow.AI - Easy English"
       />
     </div>
   );
